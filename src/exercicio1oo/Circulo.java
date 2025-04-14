@@ -1,4 +1,5 @@
 package exercicio1oo;
 
-public class Circulo {
+class Circulo {
+     double raio;
 }
