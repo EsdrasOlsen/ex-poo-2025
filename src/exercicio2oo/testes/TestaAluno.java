@@ -2,7 +2,7 @@ package exercicio2oo.testes;
 
 import exercicio2oo.classes.Aluno;
 
-class TestaAluno {
+public class TestaAluno {
     public static void main(String[] args) {
         Aluno esdras = new Aluno();
         esdras.nome = "Esdras Olsen";
