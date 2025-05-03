@@ -6,6 +6,20 @@ public class Carro {
     private int ano;
     private double velocidade;
 
+    // Acelerar
+    public double acelerarCarro() {
+        velocidade += 10.0;
+        return velocidade;
+    }
+
+    // Frear
+    public double desacelerarCarro() {
+        if (velocidade >= 10.0) {
+            velocidade -= 10.0;
+        }
+        return velocidade;
+    }
+
     public String getModelo(){return modelo;}
     public void setModelo(String modelo){this.modelo = modelo;}
 
