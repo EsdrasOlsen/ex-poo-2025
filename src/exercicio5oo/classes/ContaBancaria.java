@@ -5,40 +5,74 @@ public class ContaBancaria {
     private String titular;
     private double saldo;
 
-    //depositos
-    public void depositar(double valor){
-        if (valor > 0){
-            saldo += valor;
-            System.out.printf("\n Deposito de R$" + valor + " realizado com sucesso!\n");
-        }
-        else{
-            System.out.printf("Valor de depósito inválido.");
-        }
+    public ContaBancaria() {
+        this.numeroConta = "";
+        this.titular = "";
+        this.saldo = 0.0;
     }
 
-    //Saques
-    public void sacar(double valor){
-        if (valor > 0){
-            saldo -= valor;
-            System.out.println("\n Saque realizado com sucesso!\n");
-        }
-        else{
-            System.out.println("Saque inválido. Verifique o saldo ou o valor digitado.");
-        }
+    public ContaBancaria(String numeroConta, String titular, double saldo) {
+        this.numeroConta = numeroConta;
+        this.titular = titular;
+        this.saldo = saldo;
     }
 
     //consultar saldo
 
-    public double consultarSaldo(){
+    public double consultarSaldo() {
         return saldo;
     }
 
-    public String getNumeroConta() {return numeroConta;}
-    public void setNumeroConta(String numeroConta) {this.numeroConta = numeroConta;}
+    //depositos
+    public void depositar(double valor) {
+        if (valor > 0) {
+            saldo += valor;
+            System.out.printf("\nDeposito de R$" + valor + " realizado com sucesso!\n");
+        } else {
+            System.out.printf("\nValor de depósito inválido.");
+        }
+    }
 
-    public String getTitular() {return titular;}
-    public void setTitular(String titular) {this.titular = titular;}
+    //Saques
+    public void sacar(double valor) {
+        if (valor > 0) {
+            saldo -= valor;
+            System.out.printf("\nSaque de R$" + valor + " realizado com sucesso!\n");
+        } else {
+            System.out.println("\nSaque inválido. Verifique o saldo ou o valor digitado.");
+        }
+    }
 
-    public double getSaldo() {return saldo;}
-    public void setSaldo(double saldo) {this.saldo = saldo;}
+    @Override
+    public String toString() {
+        return "Banco do Brasil \n" + "Numero da Conta: " + numeroConta + "\n" + "Titular: " + titular + "\n" + "Saldo: " + saldo;
+    }
+
+    public String getNumeroConta() {
+        return numeroConta;
+    }
+
+    public void setNumeroConta(String numeroConta) {
+        this.numeroConta = numeroConta;
+    }
+
+    public String getTitular() {
+        return titular;
+    }
+
+    public void setTitular(String titular) {
+        this.titular = titular;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        if (saldo < 0) {
+            System.out.println("Error: Saldo Negativo!");
+        } else {
+            this.saldo = saldo;
+        }
+    }
 }
