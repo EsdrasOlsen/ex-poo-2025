@@ -14,39 +14,43 @@ public class ContaBancaria {
     public ContaBancaria(String numeroConta, String titular, double saldo) {
         this.numeroConta = numeroConta;
         this.titular = titular;
-        this.saldo = saldo;
+        setSaldo(saldo); // usa validação
     }
 
-    //consultar saldo
+    // Consultar saldo
     public double consultarSaldo() {
         return saldo;
     }
 
-    //depositos
+    // Depósitos
     public void depositar(double valor) {
         if (valor > 0) {
             saldo += valor;
-            System.out.printf("\nDeposito de R$" + valor + " realizado com sucesso!\n");
+            System.out.println("Depósito de R$" + valor + " realizado com sucesso!");
         } else {
-            System.out.printf("\nValor de depósito inválido.");
+            System.out.println("Valor de depósito inválido.");
         }
     }
 
-    //Saques
+    // Saques
     public void sacar(double valor) {
-        if (valor > 0) {
+        if (valor > 0 && saldo >= valor) {
             saldo -= valor;
-            System.out.printf("\nSaque de R$" + valor + " realizado com sucesso!\n");
+            System.out.println("Saque de R$" + valor + " realizado com sucesso!");
         } else {
-            System.out.println("\nSaque inválido. Verifique o saldo ou o valor digitado.");
+            System.out.println("Saque inválido. Verifique o saldo ou o valor digitado.");
         }
     }
 
     @Override
     public String toString() {
-        return "Banco do Brasil \n" + "Numero da Conta: " + numeroConta + "\n" + "Titular: " + titular + "\n" + "Saldo: " + saldo;
+        return "Banco do Brasil\n" +
+                "Número da Conta: " + numeroConta + "\n" +
+                "Titular: " + titular + "\n" +
+                "Saldo: R$" + String.format("%.2f", saldo);
     }
 
+    // Getters e Setters
     public String getNumeroConta() {
         return numeroConta;
     }
@@ -69,7 +73,7 @@ public class ContaBancaria {
 
     public void setSaldo(double saldo) {
         if (saldo < 0) {
-            System.out.println("Error: Saldo Negativo!");
+            System.out.println("Erro: saldo não pode ser negativo.");
         } else {
             this.saldo = saldo;
         }

@@ -1,12 +1,12 @@
 package exercicio5oo.classes;
 
 public class Livro {
-    String titulo;
-    String autor;
-    String genero;
-    boolean emprestado;
+    private String titulo;
+    private String autor;
+    private String genero;
+    private boolean emprestado;
 
-    //Padrão
+    // Construtor padrão
     public Livro() {
         this.titulo = "";
         this.autor = "";
@@ -14,48 +14,46 @@ public class Livro {
         this.emprestado = false;
     }
 
-    //Parametrizado
-    public Livro(String titulo, String autor, String genero, Boolean emprestado) {
+    // Construtor parametrizado
+    public Livro(String titulo, String autor, String genero, boolean emprestado) {
         this.titulo = titulo;
         this.autor = autor;
         this.genero = genero;
         this.emprestado = emprestado;
     }
 
-    //Emprestar
+    // Emprestar livro
     public String emprestarLivro() {
         if (emprestado) {
-            return "Livro já está emprestado";
+            return "Livro já está emprestado.";
         } else {
             emprestado = true;
-            return "Livro emprestado com sucesso";
+            return "Livro emprestado com sucesso.";
         }
     }
 
-    //Devolver
+    // Devolver livro
     public String devolverLivro() {
         if (emprestado) {
             emprestado = false;
-            return "Livro devolvido com sucesso";
+            return "Livro devolvido com sucesso.";
         } else {
-            return "Não há livro emprestado";
+            return "O livro não está emprestado.";
         }
     }
 
-    //Verificar Disponibilidade
+    // Verificar disponibilidade
     public String verificarDisponibilidade() {
-        if (emprestado) {
-            return "Livro indisponivel";
-        } else {
-            return "Livro disponivel";
-        }
+        return emprestado ? "Livro indisponível." : "Livro disponível.";
     }
 
     @Override
     public String toString() {
-        return "Livraria Contestado -" + "\nTitulo: " + titulo + "\nAutor: " + autor + "\nGenero: " + genero + "\nEmprestado?: " + emprestado;
+        return String.format("Livraria Contestado -\nTítulo: %s\nAutor: %s\nGênero: %s\nEmprestado?: %s",
+                titulo, autor, genero, emprestado ? "Sim" : "Não");
     }
 
+    // Getters e Setters
     public String getTitulo() {
         return titulo;
     }
@@ -80,7 +78,7 @@ public class Livro {
         this.genero = genero;
     }
 
-    public boolean getEmprestado() {
+    public boolean isEmprestado() {
         return emprestado;
     }
 

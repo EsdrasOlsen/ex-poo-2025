@@ -1,51 +1,51 @@
 package exercicio5oo.classes;
 
 public class Retangulo {
-    double largura;
-    double altura;
+    private double largura;
+    private double altura;
 
-    //Construtor Padrão;
+    // Construtor padrão
     public Retangulo() {
         this.largura = 0.0;
         this.altura = 0.0;
     }
 
-    //Construtor Parametrizado;
+    // Construtor parametrizado
     public Retangulo(double largura, double altura) {
-        this.largura = largura;
-        this.altura = altura;
+        this.setLargura(largura);
+        this.setAltura(altura);
     }
 
-    //Calcula à Area;
+    // Calcula a área
     public double calcularArea() {
         return this.largura * this.altura;
     }
 
-    //Metodo toString
+    // Método toString
     @Override
     public String toString() {
         return "Largura: " + this.largura + "\nAltura: " + this.altura;
     }
 
-    public Double getLargura() {
+    public double getLargura() {
         return largura;
     }
 
     public void setLargura(double largura) {
         if (largura < 0 || largura > 1000) {
-            System.out.println("Erro: Largura deve estar entre 0 e 1000");
+            System.out.println("Erro: a largura deve estar entre 0 e 1000.");
         } else {
             this.largura = largura;
         }
     }
 
-    public Double getAltura() {
+    public double getAltura() {
         return altura;
     }
 
     public void setAltura(double altura) {
         if (altura < 0 || altura > 1000) {
-            System.out.println("Erro: Altura deve estar entre 0 e 1000");
+            System.out.println("Erro: a altura deve estar entre 0 e 1000.");
         } else {
             this.altura = altura;
         }

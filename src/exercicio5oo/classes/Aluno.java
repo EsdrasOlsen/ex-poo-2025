@@ -29,12 +29,12 @@ public class Aluno {
     }
 
     //calcular media
-    public double CalcularMedia() {
+    public double calcularMedia() {
         return (nota1 + nota2 + nota3 + nota4) / 4.0;
     }
 
     public void imprimirSituacao() {
-        if (this.CalcularMedia() >= 7) {
+        if (this.calcularMedia() >= 7) {
             System.out.printf(this.nome + " está aprovado com sucesso!\n");
         } else {
             System.out.printf(this.nome + " está reprovado!\n");

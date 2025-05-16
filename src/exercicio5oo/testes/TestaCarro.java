@@ -14,10 +14,10 @@ public class TestaCarro {
         p.setVelocidade(100.0);
         System.out.println(p);
         System.out.println("\nDados do Carro após acelerar: ");
-        p.acelerarCarro();
+        p.acelerar();
         System.out.println(p);
         System.out.println("\nDados do Carro após frear: ");
-        p.desacelerarCarro();
+        p.frear();
         System.out.println(p);
     }
 }

@@ -1,37 +1,37 @@
 package exercicio5oo.classes;
 
 public class Circulo {
-    double raio;
+    private double raio;
 
-    //Construtor padrão;
+    // Construtor padrão
     public Circulo() {
         this.raio = 0.0;
     }
 
-    //Construtor Parametrizado;
+    // Construtor parametrizado
     public Circulo(double raio) {
-        this.raio = raio;
+        setRaio(raio);
     }
 
-    //calcular diametro
-    public double CalcularDiamentro() {
+    // Calcular diâmetro
+    public double calcularDiametro() {
         return 2 * raio;
     }
 
-    //calcular perimetro
-    public double CalcularPerimetro() {
+    // Calcular perímetro
+    public double calcularPerimetro() {
         return 2 * Math.PI * raio;
     }
 
-    //calcular area
-    public double CalcularArea() {
+    // Calcular área
+    public double calcularArea() {
         return Math.PI * raio * raio;
     }
 
     @Override
     public String toString() {
         return String.format("Círculo:\nRaio: %.2f\nDiâmetro: %.2f\nPerímetro: %.2f\nÁrea: %.2f",
-                raio, CalcularDiamentro(), CalcularPerimetro(), CalcularArea());
+                raio, calcularDiametro(), calcularPerimetro(), calcularArea());
     }
 
     public double getRaio() {
@@ -40,7 +40,7 @@ public class Circulo {
 
     public void setRaio(double raio) {
         if (raio < 0 || raio > 1000) {
-            System.out.println("Erro: Raio deve ser entre 0 e 1000");
+            System.out.println("Erro: o raio deve estar entre 0 e 1000.");
         } else {
             this.raio = raio;
         }
