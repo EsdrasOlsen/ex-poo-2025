@@ -18,7 +18,6 @@ public class ContaBancaria {
     }
 
     //consultar saldo
-
     public double consultarSaldo() {
         return saldo;
     }

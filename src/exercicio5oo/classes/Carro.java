@@ -5,14 +5,16 @@ public class Carro {
     private String marca;
     private int ano;
     private double velocidade;
-//Construtor Padrão
+
+    //Construtor Padrão
     public Carro() {
         this.modelo = "";
         this.marca = "";
         this.ano = 0;
         this.velocidade = 0;
     }
-//Construtor Parametrizado
+
+    //Construtor Parametrizado
     public Carro(String modelo, String marca, int ano, double velocidade) {
         this.modelo = modelo;
         this.marca = marca;
