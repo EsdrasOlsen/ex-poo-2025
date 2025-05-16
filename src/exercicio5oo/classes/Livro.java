@@ -1,11 +1,24 @@
 package exercicio5oo.classes;
 
 public class Livro {
-    private String titulo;
-    private String autor;
-    private String genero;
-    private Boolean emprestado;
-
+    String titulo;
+    String autor;
+    String genero;
+    Boolean emprestado;
+//Padrão
+    public Livro(){
+        this.titulo = "";
+        this.autor = "";
+        this.genero = "";
+        this.emprestado = false;
+    }
+//Parametrizado
+    public Livro(String titulo, String autor, String genero, Boolean emprestado) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.genero = genero;
+        this.emprestado = emprestado;
+    }
     //Emprestar
     public String emprestarLivro(){
     if(emprestado){
@@ -34,6 +47,11 @@ public class Livro {
         else{
             return "Livro disponivel";
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Livraria Contestado -" + "\nTitulo: " + titulo + "\nAutor: " + autor + "\nGenero: " + genero + "\nEmprestado?: " + emprestado;
     }
 
     public String getTitulo() {return titulo;}
