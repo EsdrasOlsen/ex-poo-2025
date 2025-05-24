@@ -8,13 +8,15 @@ public class Carro {
 
     // Construtor padrão
     public Carro() {
-        this.modelo = "";
-        this.marca = "";
-        this.ano = 0;
-        this.velocidade = 0;
+        this("", "", 0, 0);
     }
 
-    // Construtor parametrizado
+    //Construtor encadeado
+    public Carro(String modelo, String marca, int ano) {
+        this(modelo, marca, ano, 0);
+    }
+
+    // Construtor parametrizado completo
     public Carro(String modelo, String marca, int ano, double velocidade) {
         this.modelo = modelo;
         this.marca = marca;
@@ -46,11 +48,7 @@ public class Carro {
 
     @Override
     public String toString() {
-        return "Concessionária Brasil -\n" +
-                "Modelo: " + modelo + "\n" +
-                "Marca: " + marca + "\n" +
-                "Ano: " + ano + "\n" +
-                "Velocidade: " + velocidade + " km/h";
+        return String.format("\nModelo: %s \nMarca: %s \nAno: %d \nVelocidade: %.2f", modelo, marca, ano, velocidade);
     }
 
     // Getters e Setters
