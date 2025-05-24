@@ -6,9 +6,11 @@ public class ContaBancaria {
     private double saldo;
 
     public ContaBancaria() {
-        this.numeroConta = "";
-        this.titular = "";
-        this.saldo = 0.0;
+        this("", "", 0.0);
+    }
+
+    public ContaBancaria(String numeroConta, String titular) {
+        this(numeroConta, titular, 0.0);
     }
 
     public ContaBancaria(String numeroConta, String titular, double saldo) {
@@ -44,10 +46,7 @@ public class ContaBancaria {
 
     @Override
     public String toString() {
-        return "Banco do Brasil\n" +
-                "Número da Conta: " + numeroConta + "\n" +
-                "Titular: " + titular + "\n" +
-                "Saldo: R$" + String.format("%.2f", saldo);
+        return String.format("\nNúmero da Conta: %s \nTitular: %s \nSaldo: %.2f", numeroConta, titular, saldo);
     }
 
     // Getters e Setters
