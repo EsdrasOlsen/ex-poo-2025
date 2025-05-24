@@ -5,7 +5,7 @@ public class Circulo {
 
     // Construtor padrão
     public Circulo() {
-        this.raio = 0.0;
+        this(0.0);
     }
 
     // Construtor parametrizado
